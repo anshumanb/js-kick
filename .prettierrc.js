@@ -1,1 +1,1 @@
-module.exports = require('@bhadurian/prettier-config');
+module.exports = require('./packages/prettier-config/index.json');

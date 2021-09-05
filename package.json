@@ -1,8 +1,17 @@
 {
-  "name": "js-kick",
-  "private": true,
+  "name": "@bhadurian/js-kick",
+  "version": "1.0.2",
+  "description": "~~ajsdkf",
+  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumanb/js-kick.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "@bhadurian/prettier-config": "^1.0.0",
     "lerna": "^4.0.0",
     "prettier": "^2.3.2"
   }

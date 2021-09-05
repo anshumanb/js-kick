@@ -1,14 +1,14 @@
 {
   "name": "@bhadurian/prettier-config",
   "version": "1.0.1",
-  "description": "Anshuman's prettier config",
+  "description": "Anshuman's Prettier config",
   "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
   "license": "MIT",
   "main": "index.json",
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git",
-    "directory": "packages/prettier"
+    "directory": "packages/prettier-config"
   },
   "peerDependencies": {
     "prettier": ">=2"

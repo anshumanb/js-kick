@@ -4,4 +4,3 @@ dist/
 build/
 out/
 .next/
-package-lock.json
