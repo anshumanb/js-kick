@@ -2,13 +2,23 @@
 
 My personal [Prettier](https://prettier.io) config.
 
-## Usage
+## Install
 
-Install:
+For use with Prettier >= 2.0.0.
 
 ```bash
-$ npm add --dev @bhadurian/prettier-config
+$ npm install --save-dev @bhadurian/prettier-config
 ```
+
+## Usage
+
+Add a key in your `package.json` file:
+
+```jsonc
+"prettier": "@rapidevelop/prettier-config"
+```
+
+OR
 
 Edit `.prettierrc.json`:
 
@@ -16,7 +26,9 @@ Edit `.prettierrc.json`:
 "@bhadurian/prettier-config"
 ```
 
-To override options:
+### Override options
+
+Use `.prettierrc.js` file and export an object:
 
 ```js
 module.exports = {
