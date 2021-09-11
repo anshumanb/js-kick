@@ -1,0 +1,24 @@
+{
+  "name": "@bhadurian/tsconfig",
+  "version": "0.1.0",
+  "description": "Anshuman's TypeScript config",
+  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
+  "license": "MIT",
+  "files": [
+    "base.json",
+    "node-lts.json",
+    "web.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumanb/js-kick.git",
+    "directory": "packages/tsconfig"
+  },
+  "peerDependencies": {
+    "@types/node": ">=14",
+    "typescript": ">=4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
