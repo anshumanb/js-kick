@@ -1,0 +1,27 @@
+{
+  "name": "@bhadurian/mrm-preset",
+  "version": "0.1.0",
+  "description": "Setup tasks for Anshuman",
+  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
+  "license": "MIT",
+  "main": "config.json",
+  "files": [
+    "config.json",
+    "*/index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumanb/js-kick.git",
+    "directory": "packages/mrm-preset"
+  },
+  "keywords": [
+    "mrm",
+    "mrm-preset"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "mrm-core": "^6.1.5"
+  }
+}

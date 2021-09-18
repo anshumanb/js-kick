@@ -1,4 +1,3 @@
 {
-  "extends": "./packages/tsconfig/node-lts.json",
-  "include": ["scripts"]
+  "extends": "./packages/tsconfig/node-lts.json"
 }
