@@ -19,6 +19,7 @@
     "packages/tsconfig"
   ],
   "devDependencies": {
+    "@bhadurian/eslint-config": "file:packages/eslint-config",
     "@bhadurian/prettier-config": "file:packages/prettier-config",
     "@bhadurian/tsconfig": "file:packages/tsconfig",
     "@types/node": "^14.17.17",

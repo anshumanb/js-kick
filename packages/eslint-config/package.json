@@ -1,0 +1,25 @@
+{
+  "name": "@bhadurian/eslint-config",
+  "version": "0.1.0",
+  "description": "Anshuman's ESLint config",
+  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumanb/js-kick.git",
+    "directory": "packages/eslint-config"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=4",
+    "@typescript-eslint/parser": ">=4",
+    "eslint": ">=7",
+    "eslint-config-airbnb-base": ">=14",
+    "eslint-config-airbnb-typescript": ">=14",
+    "eslint-config-prettier": ">=8",
+    "eslint-plugin-import": ">=2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
