@@ -1,4 +1,4 @@
-const { install, json } = require('mrm-core');
+const { install, lines, json } = require('mrm-core');
 
 const packages = {
     eslint: '^7',
@@ -18,6 +18,8 @@ const task = () => {
         root: true,
         extends: defaultExtends,
     });
+
+    lines('.gitignore').add('.eslintcache').save();
 
     const extensions = [].concat(file.get('extends'));
     if (!extensions.includes(defaultExtends[0])) {
