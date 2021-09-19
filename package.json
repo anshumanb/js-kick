@@ -9,7 +9,8 @@
     "url": "https://github.com/anshumanb/js-kick.git"
   },
   "scripts": {
-    "mrm": "mrm --dir packages/mrm-preset"
+    "mrm": "mrm --dir packages/mrm-preset",
+    "format": "prettier --write ."
   },
   "workspaces": [
     "packages/eslint-config",
@@ -18,6 +19,7 @@
     "packages/ts-config"
   ],
   "devDependencies": {
+    "@bhadurian/prettier-config": "file:packages/prettier-config",
     "@types/node": "^14.17.17",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
@@ -28,7 +30,7 @@
     "eslint-plugin-import": "^2.24.2",
     "lerna": "^4.0.0",
     "mrm": "^3.0.8",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   },
   "private": true

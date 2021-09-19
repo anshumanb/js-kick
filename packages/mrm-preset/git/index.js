@@ -8,14 +8,7 @@ const configureGitAttributes = () => {
 
 const configureGitIgnore = () => {
     const file = lines('.gitignore');
-    file.add([
-        'node_modules/',
-        'coverage/',
-        'dist/',
-        'build/',
-        'out/',
-        '.next/',
-    ]);
+    file.add(['node_modules/']);
     file.save();
 };
 
