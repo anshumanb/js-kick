@@ -22,6 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "mrm-core": "^6.1.5"
+    "mrm-core": "^6.1.5",
+    "mrm-task-lint-staged": "^6.0.7"
   }
 }
