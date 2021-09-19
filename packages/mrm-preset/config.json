@@ -1,5 +1,12 @@
 {
   "aliases": {
-    "configure": ["git", "tsconfig", "prettier", "eslint", "lint-staged"]
+    "configure": [
+      "git",
+      "tsconfig",
+      "prettier",
+      "eslint",
+      "lint-staged",
+      "commitlint"
+    ]
   }
 }
