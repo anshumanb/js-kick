@@ -4,12 +4,14 @@ const types = {
     web: {
         configName: 'web',
         packages: {
+            '@bhadurian/tsconfig': '*',
             typescript: '^4.4.3',
         },
     },
     node: {
         configName: 'node-lts',
         packages: {
+            '@bhadurian/tsconfig': '*',
             typescript: '^4.4.3',
             // FIXME: Should default to latest lts and be in sync with nvmrc
             '@types/node': '^14',

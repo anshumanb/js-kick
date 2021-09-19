@@ -16,10 +16,11 @@
     "packages/eslint-config",
     "packages/mrm-preset",
     "packages/prettier-config",
-    "packages/ts-config"
+    "packages/tsconfig"
   ],
   "devDependencies": {
     "@bhadurian/prettier-config": "file:packages/prettier-config",
+    "@bhadurian/tsconfig": "file:packages/tsconfig",
     "@types/node": "^14.17.17",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
