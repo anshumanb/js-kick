@@ -1,5 +1,6 @@
 const path = require('path');
-const { packageJson, lines, ini } = require('mrm-core');
+const { packageJson, lines, ini, install } = require('mrm-core');
+const { name, email } = require('user-meta');
 
 const types = {
     library: {
@@ -39,7 +40,13 @@ const configurePackageJson = ({ type, description }) => {
     const pkgFile = packageJson({
         name: pkgName,
         version: '0.1.0',
+        author: {
+            name,
+            email,
+        },
     });
+
+    pkgFile.setScript('mrm', 'mrm --preset=@bhadurian/mrm-preset');
 
     pkgFile.merge({
         description,
@@ -47,6 +54,10 @@ const configurePackageJson = ({ type, description }) => {
     });
 
     pkgFile.save();
+
+    // Install mrm so subsequent mrm runs won't download the package. Also
+    // updates to config will not requires mrm downloads this way
+    install({ mrm: '^3' });
 };
 
 const task = (args) => {

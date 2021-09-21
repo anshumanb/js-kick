@@ -1,4 +1,13 @@
+const { spawnSync } = require('child_process');
+const { normalize } = require('path');
 const { lines } = require('mrm-core');
+
+const initGit = () => {
+    if (lines(normalize('.git/config')).exists()) {
+        return;
+    }
+    spawnSync('git', ['init']);
+};
 
 const configureGitAttributes = () => {
     const file = lines('.gitattributes');
@@ -13,9 +22,10 @@ const configureGitIgnore = () => {
 };
 
 const task = () => {
-    // do git init as well?
+    initGit();
     configureGitAttributes();
     configureGitIgnore();
+    // TODO: Update package.json repository attribute
 };
 
 task.description = 'Configure Git';
