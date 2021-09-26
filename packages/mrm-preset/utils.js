@@ -1,14 +1,25 @@
+const { copyFileSync } = require('fs');
+const path = require('path');
 const { lines, json, packageJson } = require('mrm-core');
 const { normalize } = require('path');
 
+const exists = (filepath) => lines(normalize(filepath)).exists();
+
 module.exports = {
-    exists: (filepath) => lines(normalize(filepath)).exists(),
+    exists,
     isInstalled: (pkg) => {
         const pkgJson = packageJson();
         return !!(
             pkgJson.get(`devDependencies.${pkg}`) ||
             pkgJson.get(`dependencies.${pkg}`)
         );
+    },
+    copyFile: (source, dest, { overwrite = false } = {}) => {
+        const destPath = path.resolve(dest);
+        if (!overwrite && exists(destPath)) {
+            return;
+        }
+        copyFileSync(source, destPath);
     },
     json: (...args) => {
         const file = json(...args);

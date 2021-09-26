@@ -13,4 +13,7 @@ module.exports = {
         'out/',
         '.next/',
     ],
+    rules: {
+        'import/prefer-default-export': 'off',
+    },
 };

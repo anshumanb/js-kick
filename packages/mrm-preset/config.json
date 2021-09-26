@@ -8,6 +8,6 @@
       "tsconfig",
       "eslint"
     ],
-    "next": ["next"]
+    "next": ["next", "storybook"]
   }
 }
