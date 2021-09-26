@@ -1,11 +1,11 @@
 const { spawnSync } = require('child_process');
 const { normalize } = require('path');
-const { install, lines, json, packageJson } = require('mrm-core');
+const { install, lines, packageJson } = require('mrm-core');
+const { isInstalled, json } = require('../utils');
 
 const setHook = (hook, script) => {
-    const isHuskyInstalled = !!packageJson().get('devDependencies.husky');
-
-    if (!isHuskyInstalled) {
+    // FIXME: Dependency on Husky
+    if (!isInstalled('husky')) {
         return;
     }
 
@@ -20,29 +20,20 @@ const setHook = (hook, script) => {
 };
 
 const configureCommitlint = () => {
-    const packages = {
-        '@commitlint/config-conventional': '^13',
-        '@commitlint/cli': '^13',
-    };
-
-    json('.commitlintrc.json', {
-        extends: ['@commitlint/config-conventional'],
-    }).save();
+    json('.commitlintrc.json')
+        .prepend('extends', '@commitlint/config-conventional')
+        .save();
 
     setHook('commit-msg', 'npx --no-install commitlint --edit');
 
-    install(packages);
+    install({
+        '@commitlint/config-conventional': '^13',
+        '@commitlint/cli': '^13',
+    });
 };
 
 const configureCommitizen = () => {
-    const packages = {
-        commitizen: '^4',
-        '@commitlint/cz-commitlint': '^13',
-    };
-
-    json('.czrc', {
-        path: '@commitlint/cz-commitlint',
-    }).save();
+    json('.czrc').setIfUnset('path', '@commitlint/cz-commitlint').save();
 
     packageJson().setScript('cz', 'cz').save();
 
@@ -52,7 +43,10 @@ const configureCommitizen = () => {
         'exec < /dev/tty && node_modules/.bin/cz --hook || true',
     );
 
-    install(packages);
+    install({
+        commitizen: '^4',
+        '@commitlint/cz-commitlint': '^13',
+    });
 };
 
 const task = () => {

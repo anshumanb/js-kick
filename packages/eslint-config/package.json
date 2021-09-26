@@ -11,13 +11,38 @@
     "directory": "packages/eslint-config"
   },
   "peerDependencies": {
+    "@next/eslint-plugin-next": ">=11",
     "@typescript-eslint/eslint-plugin": ">=4",
     "@typescript-eslint/parser": ">=4",
     "eslint": ">=7",
+    "eslint-config-airbnb": ">=14",
     "eslint-config-airbnb-base": ">=14",
     "eslint-config-airbnb-typescript": ">=14",
     "eslint-config-prettier": ">=8",
-    "eslint-plugin-import": ">=2"
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-hooks": "*"
+  },
+  "peerDependenciesMeta": {
+    "@next/eslint-plugin-next": {
+      "optional": true
+    },
+    "eslint-config-airbnb": {
+      "optional": true
+    },
+    "eslint-config-airbnb-base": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

@@ -1,8 +1,9 @@
 const { lines, install, json, packageJson } = require('mrm-core');
+const { exists } = require('../utils');
 
 const task = () => {
-    const jsConf = lines('.prettierrc.js');
-    if (!jsConf.exists()) {
+    // TODO: Just always write JS config
+    if (!exists('.prettierrc.js')) {
         // Default config has not been extended so we have the liberty to blow
         // things away
         json('.prettierrc.json').set('@bhadurian/prettier-config').save();

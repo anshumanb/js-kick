@@ -1,42 +1,19 @@
-const { install, json } = require('mrm-core');
+const { install } = require('mrm-core');
+const { json } = require('../utils');
 
-const types = {
-    web: {
-        configName: 'web',
-        packages: {
-            '@bhadurian/tsconfig': '*',
-            typescript: '^4.4.3',
-        },
-    },
-    node: {
-        configName: 'node-lts',
-        packages: {
-            '@bhadurian/tsconfig': '*',
-            typescript: '^4.4.3',
-            // FIXME: Should default to latest lts and be in sync with nvmrc
-            '@types/node': '^14',
-        },
-    },
-};
+const task = () => {
+    json('tsconfig.json')
+        .setIfUnset('extends', '@bhadurian/tsconfig/node-lts.json')
+        .save();
 
-const task = ({ type }) => {
-    const projType = types[type];
-
-    const file = json('tsconfig.json');
-    file.set('extends', `@bhadurian/tsconfig/${projType.configName}.json`);
-    file.save();
-
-    install(projType.packages);
+    install({
+        '@bhadurian/tsconfig': '*',
+        typescript: '^4.4.3',
+        // FIXME: Should default to latest lts and be in sync with nvmrc
+        '@types/node': '^14',
+    });
 };
 
 task.description = 'Configure TypeScript';
-task.parameters = {
-    type: {
-        default: 'web',
-        choices: Object.keys(types),
-        message: 'What type of project?',
-        type: 'list',
-    },
-};
 
 module.exports = task;

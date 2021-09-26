@@ -2,11 +2,12 @@
   "aliases": {
     "configure": [
       "git",
-      "tsconfig",
       "prettier",
-      "eslint",
       "lint-staged",
-      "commitlint"
-    ]
+      "commitlint",
+      "tsconfig",
+      "eslint"
+    ],
+    "next": ["next"]
   }
 }
