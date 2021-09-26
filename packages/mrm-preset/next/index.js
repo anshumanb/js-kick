@@ -4,6 +4,7 @@ const {
     lines,
     install,
     uninstall,
+    makeDirs,
 } = require('mrm-core');
 const { json, exists, isInstalled } = require('../utils');
 
@@ -43,6 +44,11 @@ const configureEsLint = () => {
 const task = () => {
     lines('.gitignore').add('/.next/').save();
 
+    json('tsconfig.json')
+        .set('include', ['next-env.d.ts', '**/*.ts', '**/*.tsx'])
+        .set('exclude', ['node_modules'])
+        .save();
+
     configureEsLint();
 
     json('tsconfig.json')
@@ -65,6 +71,8 @@ const task = () => {
         '// NOTE: This file should not be edited',
         '// see https://nextjs.org/docs/basic-features/typescript for more information.',
     ]).save();
+
+    makeDirs('src/pages');
 
     packageJson()
         .setScript('build', 'next build')

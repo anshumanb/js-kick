@@ -21,7 +21,7 @@ module.exports = {
 
             // Only handles string | string[]
             prepend: (key, delta, matchers = []) => {
-                const orig = [].concat(file.get(key));
+                const orig = [].concat(file.get(key), null).filter(Boolean);
 
                 if (orig.includes(delta)) {
                     return file;
@@ -31,7 +31,7 @@ module.exports = {
                     matchers.some((matcher) => val === matcher),
                 );
 
-                if (index !== 1) {
+                if (index !== -1) {
                     orig[index] = delta;
                     file.set(key, orig);
                 } else {
