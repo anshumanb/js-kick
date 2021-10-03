@@ -12,7 +12,7 @@
     "mrm": "mrm --dir packages/mrm-preset",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "cz": "cz"
+    "commit": "cz"
   },
   "workspaces": [
     "packages/eslint-config",

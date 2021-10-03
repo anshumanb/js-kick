@@ -9,11 +9,17 @@ const task = () => {
         json('.prettierrc.json').set('@bhadurian/prettier-config').save();
     }
 
-    lines('.prettierignore').add(['node_modules/']).save();
+    lines('.prettierignore')
+        .remove(['package-lock.json', 'node_modules'])
+        .add(['node_modules/'])
+        .save();
 
-    packageJson().setScript('format', 'prettier --write .').save();
+    packageJson()
+        .removeScript('prettier')
+        .setScript('format', 'prettier --write .')
+        .save();
 
-    install({ prettier: '^2', '@bhadurian/prettier-config': '*' });
+    install({ prettier: '>=2.4', '@bhadurian/prettier-config': '*' });
 };
 
 task.description = 'Configure Prettier';

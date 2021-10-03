@@ -1,6 +1,6 @@
 const { normalize } = require('path');
 const lintStaged = require('mrm-task-lint-staged');
-const { lines } = require('mrm-core');
+const { lines, install } = require('mrm-core');
 
 const task = () => {
     // For every run of lint-staged, it appends "npx lint-staged" to pre-commit.
@@ -11,6 +11,11 @@ const task = () => {
         preCommit.remove('npx lint-staged').save();
     }
 
+    install({ husky: '>=7', 'lint-staged': '>=11' });
+
+    // FIXME: This still needed some manual intervention to tidy config for
+    // get_transations
+    // FIXME: Cannot assign '*': 'prettier --write" with this task
     lintStaged({
         lintStagedRules: {
             prettier: {

@@ -8,7 +8,7 @@ const task = () => {
 
     install({
         '@bhadurian/tsconfig': '*',
-        typescript: '^4.4.3',
+        typescript: '>=4.4.3',
         // FIXME: Should default to latest lts and be in sync with nvmrc
         '@types/node': '^14',
     });

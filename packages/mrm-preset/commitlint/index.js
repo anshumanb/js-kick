@@ -19,6 +19,16 @@ const setHook = (hook, script) => {
     }
 };
 
+const removeHook = (hook) => {
+    if (!isInstalled('husky')) {
+        return;
+    }
+
+    const hookPath = normalize(`.husky/${hook}`);
+    lines(hookPath).delete();
+};
+
+// TODO: Run commitlint on CI
 const configureCommitlint = () => {
     json('.commitlintrc.json')
         .prepend('extends', '@commitlint/config-conventional')
@@ -35,13 +45,10 @@ const configureCommitlint = () => {
 const configureCommitizen = () => {
     json('.czrc').setIfUnset('path', '@commitlint/cz-commitlint').save();
 
-    packageJson().setScript('cz', 'cz').save();
-
-    // So commitizen runs on git commit
-    setHook(
-        'prepare-commit-msg',
-        'exec < /dev/tty && node_modules/.bin/cz --hook || true',
-    );
+    // We don't want the commitizen prompt appearing when committing during
+    // builds so only show prompt when we run 'npm run commit'
+    packageJson().removeScript('cz').setScript('commit', 'cz').save();
+    removeHook('prepare-commit-msg');
 
     install({
         commitizen: '^4',

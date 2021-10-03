@@ -9,7 +9,7 @@ const task = () => {
 
     lines('.gitattributes').add(['* text=auto eol=lf']).save();
 
-    lines('.gitignore').add(['node_modules/']).save();
+    lines('.gitignore').remove('node_modules').add('node_modules/').save();
     // TODO: Update package.json repository attribute
 };
 

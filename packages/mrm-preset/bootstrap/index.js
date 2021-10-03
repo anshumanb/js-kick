@@ -70,7 +70,7 @@ const task = (args) => {
 task.description = 'Bootstrap a new project';
 task.parameters = {
     type: {
-        default: 'library',
+        default: 'application',
         choices: Object.keys(types),
         message: 'What type of package?',
         type: 'list',
