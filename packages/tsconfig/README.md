@@ -1,38 +1,37 @@
-# `@bhadurian/prettier-config`
+# `@bhadurian/tsconfig`
 
-My personal [Prettier](https://prettier.io) config.
+My shared [TypeScript config](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
 ## Install
 
-For use with Prettier >= 2.0.0.
-
 ```bash
-$ npm install --save-dev @bhadurian/prettier-config
+$ npm install --save-dev @bhadurian/tsconfig
 ```
 
 ## Usage
 
-Add a key in your `package.json` file:
+### Node
 
-```jsonc
-"prettier": "@rapidevelop/prettier-config"
+When working with Node:
+
+```bash
+$ npm install --save-dev @types/node
 ```
 
-OR
-
-Edit `.prettierrc.json`:
+Edit `tsconfig.json`:
 
 ```jsonc
-"@bhadurian/prettier-config"
+{
+    "extends": "@bhadurian/tsconfig/node-lts.json"
+}
 ```
 
-### Override options
+### Next.js
 
-Use `.prettierrc.js` file and export an object:
+When working with Next.js, edit `tsconfig.json`:
 
-```js
-module.exports = {
-    ...require('@bhadurian/prettier-config'),
-    semi: false,
-};
+```jsonc
+{
+    "extends": "@bhadurian/tsconfig/next.json"
+}
 ```

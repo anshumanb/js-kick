@@ -4,7 +4,7 @@ My personal [Prettier](https://prettier.io) config.
 
 ## Install
 
-For use with Prettier >= 2.0.0.
+For use with Prettier >= 2.4.0.
 
 ```bash
 $ npm install --save-dev @bhadurian/prettier-config
@@ -15,7 +15,7 @@ $ npm install --save-dev @bhadurian/prettier-config
 Add a key in your `package.json` file:
 
 ```jsonc
-"prettier": "@rapidevelop/prettier-config"
+"prettier": "@bhadurian/prettier-config"
 ```
 
 OR
