@@ -1,6 +1,6 @@
 {
   "name": "@bhadurian/eslint-config",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Anshuman's ESLint config",
   "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
   "license": "MIT",
