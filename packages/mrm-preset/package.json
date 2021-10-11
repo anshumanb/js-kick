@@ -5,10 +5,6 @@
   "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
   "license": "MIT",
   "main": "config.json",
-  "files": [
-    "config.json",
-    "*/index.js"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git",
