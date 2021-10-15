@@ -15,10 +15,7 @@
     "commit": "cz"
   },
   "workspaces": [
-    "packages/eslint-config",
-    "packages/mrm-preset",
-    "packages/prettier-config",
-    "packages/tsconfig"
+    "packages/*"
   ],
   "devDependencies": {
     "@bhadurian/eslint-config": "file:packages/eslint-config",
