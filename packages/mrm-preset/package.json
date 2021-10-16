@@ -1,6 +1,6 @@
 {
   "name": "@bhadurian/mrm-preset",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Setup tasks for Anshuman",
   "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
   "license": "MIT",
@@ -18,6 +18,7 @@
     "access": "public"
   },
   "dependencies": {
+    "git-username": "^1.0.0",
     "mrm-core": "^6.1.5",
     "mrm-task-lint-staged": "^6.0.7",
     "user-meta": "^1.0.0"
