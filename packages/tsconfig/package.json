@@ -2,12 +2,25 @@
   "name": "@bhadurian/tsconfig",
   "version": "1.0.0",
   "description": "Anshuman's TypeScript config",
-  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
-  "license": "MIT",
+  "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/tsconfig#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git",
     "directory": "packages/tsconfig"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
+  },
+  "scripts": {
+    "mrm": "mrm --dir=../mrm-preset"
+  },
+  "devDependencies": {
+    "mrm": "^3.0.10"
   },
   "peerDependencies": {
     "@types/node": ">=14",
@@ -17,6 +30,9 @@
     "@types/node": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"

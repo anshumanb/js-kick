@@ -2,16 +2,32 @@
   "name": "@bhadurian/prettier-config",
   "version": "1.1.0",
   "description": "Anshuman's Prettier config",
-  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
-  "license": "MIT",
-  "main": "index.json",
+  "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/prettier-config#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git",
     "directory": "packages/prettier-config"
   },
+  "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
+  },
+  "main": "index.json",
+  "scripts": {
+    "mrm": "mrm --dir=../mrm-preset"
+  },
+  "devDependencies": {
+    "mrm": "^3.0.10"
+  },
   "peerDependencies": {
     "prettier": ">=2.4"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"

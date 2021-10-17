@@ -2,18 +2,31 @@
   "name": "@bhadurian/create",
   "version": "1.1.0",
   "description": "",
-  "main": "create.js",
-  "bin": "create.js",
-  "engines": {
-    "node": ">=14"
+  "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/create#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anshumanb/js-kick.git",
+    "url": "https://github.com/anshumanb/js-kick.git",
     "directory": "packages/create"
   },
-  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
   "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
+  },
+  "main": "create.js",
+  "bin": "create.js",
+  "scripts": {
+    "mrm": "mrm --dir=../mrm-preset"
+  },
+  "devDependencies": {
+    "mrm": "^3.0.10"
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "publishConfig": {
     "access": "public"
   }

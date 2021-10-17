@@ -1,22 +1,34 @@
 {
   "name": "@bhadurian/js-kick",
   "version": "1.0.2",
+  "private": true,
   "description": "",
-  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
-  "license": "MIT",
+  "homepage": "https://github.com/anshumanb/js-kick#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git"
   },
-  "scripts": {
-    "mrm": "mrm --dir packages/mrm-preset",
-    "format": "prettier --write .",
-    "prepare": "husky install",
-    "commit": "cz"
+  "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
   },
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "commit": "cz",
+    "format": "prettier --write .",
+    "mrm": "mrm --dir packages/mrm-preset",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,md,html,css,scss,json,yaml,yml}": "prettier --write"
+  },
   "devDependencies": {
     "@bhadurian/eslint-config": "file:packages/eslint-config",
     "@bhadurian/prettier-config": "file:packages/prettier-config",
@@ -35,13 +47,11 @@
     "eslint-plugin-import": "^2.24.2",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
-    "mrm": "^3.0.8",
+    "mrm": "^3.0.10",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   },
-  "private": true,
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,md,html,css,scss,json,yaml,yml}": "prettier --write"
+  "engines": {
+    "node": ">=14"
   }
 }

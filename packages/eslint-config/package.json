@@ -2,13 +2,26 @@
   "name": "@bhadurian/eslint-config",
   "version": "1.0.0",
   "description": "Anshuman's ESLint config",
-  "author": "Anshuman Bhaduri <anshuman@bhadurian.com>",
-  "license": "MIT",
-  "main": "index.js",
+  "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/anshumanb/js-kick.git",
     "directory": "packages/eslint-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "mrm": "mrm --dir=../mrm-preset"
+  },
+  "devDependencies": {
+    "mrm": "^3.0.10"
   },
   "peerDependencies": {
     "@next/eslint-plugin-next": ">=11",
@@ -43,6 +56,9 @@
     "eslint-plugin-react-hooks": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"
