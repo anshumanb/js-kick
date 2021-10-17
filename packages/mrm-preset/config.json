@@ -1,8 +1,9 @@
 {
   "aliases": {
     "configure": [
-      "git",
       "license",
+      "package",
+      "git",
       "prettier",
       "lint-staged",
       "commitlint",
