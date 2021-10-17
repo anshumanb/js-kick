@@ -15,11 +15,22 @@ const task = () => {
 
     // FIXME: This still needed some manual intervention to tidy config for
     // get_transations
-    // FIXME: Cannot assign '*': 'prettier --write" with this task
     lintStaged({
         lintStagedRules: {
             prettier: {
-                extensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'html', 'css'],
+                extensions: [
+                    'js',
+                    'jsx',
+                    'ts',
+                    'tsx',
+                    'md',
+                    'html',
+                    'css',
+                    'scss',
+                    'json',
+                    'yaml',
+                    'yml',
+                ],
             },
             eslint: {
                 extensions: ['js', 'jsx', 'ts', 'tsx'],
