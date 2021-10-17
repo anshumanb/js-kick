@@ -1,6 +1,6 @@
 {
   "name": "@bhadurian/tsconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Anshuman's TypeScript config",
   "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/tsconfig#readme",
   "bugs": {
