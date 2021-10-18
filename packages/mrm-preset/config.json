@@ -6,7 +6,7 @@
       "git",
       "prettier",
       "lint-staged",
-      "commitlint",
+      "semantic-release",
       "tsconfig",
       "eslint"
     ],
