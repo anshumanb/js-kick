@@ -23,6 +23,7 @@ const main = (name, { isPublic = false, isRoot = false }) => {
         scripts: {
             mrm: 'mrm --preset=@bhadurian/mrm-preset',
         },
+        ...(!isRoot && { devDependencies: { mrm: '^3' } }),
         ...(isPublic
             ? { publishConfig: { access: 'public' } }
             : { private: true }),
