@@ -1,0 +1,38 @@
+{
+  "name": "@bhadurian/semantic-release-config",
+  "version": "1.0.0",
+  "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/semantic-release-config#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanb/js-kick/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumanb/js-kick.git",
+    "directory": "packages/semantic-release-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Anshuman Bhaduri",
+    "email": "anshuman@bhadurian.com"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./workspaces": "./workspaces.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@bhadurian/mrm-preset"
+  },
+  "devDependencies": {
+    "mrm": "^3"
+  },
+  "peerDependencies": {
+    "@bhadurian/semantic-release-git": ">=1",
+    "semantic-release": ">=18"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
