@@ -26,7 +26,7 @@
     "mrm": "^3"
   },
   "peerDependencies": {
-    "@bhadurian/semantic-release-git": ">=1",
+    "@bhadurian/semantic-release-git": "1.0.0",
     "semantic-release": ">=18"
   },
   "engines": {
