@@ -20,11 +20,6 @@ module.exports = {
                 preset: 'conventionalcommits',
             },
         ],
-        [
-            '@semantic-release/npm',
-            {
-                npmPublish: false,
-            },
-        ],
+        '@semantic-release/npm',
     ],
 };
