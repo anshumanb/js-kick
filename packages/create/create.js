@@ -23,6 +23,10 @@ const main = (name, { isPublic = false, isRoot = false }) => {
         scripts: {
             mrm: 'mrm --preset=@bhadurian/mrm-preset',
         },
+
+        // Don't do an npm install here. Simply add it to the package.json file
+        // as we could be creating a new package in a monorepo where we only
+        // want to run 'npm install' at the root
         ...(!isRoot && { devDependencies: { mrm: '^3' } }),
         ...(isPublic
             ? { publishConfig: { access: 'public' } }
