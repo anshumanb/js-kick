@@ -56,9 +56,27 @@ const configureCommitizen = () => {
     });
 };
 
+const configureSemanticRelease = () => {
+    packageJson()
+        .setScript('semantic-release', 'multi-semantic-release')
+        .save();
+
+    json('.releaserc.json')
+        .setIfUnset('extends', [
+            '@bhadurian/semantic-release-config/workspaces',
+        ])
+        .save();
+
+    install({
+        'multi-semantic-release': '>=2.9',
+        '@bhadurian/semantic-release-config': '>=1',
+    });
+};
+
 const task = () => {
     configureCommitlint();
     configureCommitizen();
+    configureSemanticRelease();
 };
 
 task.description = 'Configure Commitlint';

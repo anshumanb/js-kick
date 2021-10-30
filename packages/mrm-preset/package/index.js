@@ -49,6 +49,7 @@ const getMainBranch = () => {
         const branch = out.stdout.toString();
         return new RegExp(`${REMOTE}/(.*)`).exec(branch)?.[1] ?? 'main';
     }
+    // Probably a new repo
     return 'main';
 };
 
