@@ -1,0 +1,3 @@
+{
+  "extends": ["@bhadurian/semantic-release-config/workspaces"]
+}

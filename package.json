@@ -23,7 +23,8 @@
     "commit": "cz",
     "format": "prettier --write .",
     "mrm": "mrm --dir packages/mrm-preset",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "multi-semantic-release"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@bhadurian/eslint-config": "file:packages/eslint-config",
     "@bhadurian/prettier-config": "file:packages/prettier-config",
+    "@bhadurian/semantic-release-config": "file:packages/semantic-release-config",
     "@bhadurian/tsconfig": "file:packages/tsconfig",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
@@ -48,6 +50,7 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "mrm": "^3.0.10",
+    "multi-semantic-release": "^2.9.2",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   },
