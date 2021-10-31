@@ -16,14 +16,14 @@
     "email": "anshuman@bhadurian.com"
   },
   "exports": {
-    ".": "./index.js",
-    "./workspaces": "./workspaces.js"
+    ".": "./index.js"
   },
   "scripts": {
     "mrm": "mrm --preset=@bhadurian/mrm-preset"
   },
   "dependencies": {
-    "@semantic-release/git": "^10.0.0"
+    "@semantic-release/git": "^10.0.0",
+    "find-up": "^5.0.0"
   },
   "devDependencies": {
     "mrm": "^3"
