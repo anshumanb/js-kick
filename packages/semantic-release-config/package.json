@@ -16,8 +16,7 @@
     "email": "anshuman@bhadurian.com"
   },
   "exports": {
-    ".": "./index.js",
-    "./workspaces": "./workspaces.js"
+    ".": "./index.js"
   },
   "scripts": {
     "mrm": "mrm --preset=@bhadurian/mrm-preset"
@@ -26,7 +25,7 @@
     "mrm": "^3"
   },
   "peerDependencies": {
-    "@bhadurian/semantic-release-git": "1.0.0",
+    "@bhadurian/semantic-release-git": ">=1",
     "semantic-release": ">=18"
   },
   "engines": {
