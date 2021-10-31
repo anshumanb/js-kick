@@ -1,6 +1,6 @@
 const { spawnSync } = require('child_process');
 const { normalize } = require('path');
-const { install, lines, packageJson } = require('mrm-core');
+const { install, lines, packageJson, uninstall } = require('mrm-core');
 const { isInstalled, json } = require('../utils');
 
 const setHook = (hook, script) => {
@@ -57,19 +57,29 @@ const configureCommitizen = () => {
 };
 
 const configureSemanticRelease = () => {
-    packageJson()
-        .setScript('semantic-release', 'multi-semantic-release')
-        .save();
+    const pkg = packageJson();
+
+    const isUsingWorkspaces = !!pkg.get('workspaces', []).length;
+
+    if (isUsingWorkspaces) {
+        pkg.setScript(
+            'release',
+            'multi-semantic-release --deps.bump=inherit',
+        ).save();
+        uninstall('semantic-release');
+        install({ 'multi-semantic-release': '>=2.9' });
+    } else {
+        pkg.setScript('release', 'semantic-release').save();
+        uninstall('multi-semantic-release');
+        install({ 'semantic-release': '>=18' });
+    }
 
     json('.releaserc.json')
-        .setIfUnset('extends', [
-            '@bhadurian/semantic-release-config/workspaces',
-        ])
+        .setIfUnset('extends', ['@bhadurian/semantic-release-config'])
         .save();
 
     install({
-        'multi-semantic-release': '>=2.9',
-        '@bhadurian/semantic-release-config': '>=1',
+        '@bhadurian/semantic-release-config': '>=2',
     });
 };
 

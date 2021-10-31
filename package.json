@@ -24,7 +24,7 @@
     "format": "prettier --write .",
     "mrm": "mrm --dir packages/mrm-preset",
     "prepare": "husky install",
-    "semantic-release": "multi-semantic-release"
+    "release": "multi-semantic-release --deps.bump=inherit"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
