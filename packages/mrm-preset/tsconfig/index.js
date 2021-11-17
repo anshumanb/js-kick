@@ -1,4 +1,4 @@
-const { install } = require('mrm-core');
+const { install, lines } = require('mrm-core');
 const { json } = require('../utils');
 
 const task = () => {
@@ -12,6 +12,8 @@ const task = () => {
         // FIXME: Should default to latest lts and be in sync with nvmrc
         '@types/node': '^14',
     });
+
+    lines('.gitignore').add('dist/').save();
 };
 
 task.description = 'Configure TypeScript';
