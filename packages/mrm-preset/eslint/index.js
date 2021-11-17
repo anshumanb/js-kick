@@ -1,4 +1,4 @@
-const { install, lines, json } = require('mrm-core');
+const { install, lines, json, uninstall } = require('mrm-core');
 const { isInstalled } = require('../utils');
 
 const task = () => {
@@ -11,13 +11,17 @@ const task = () => {
 
     lines('.gitignore').add('.eslintcache').save();
 
+    uninstall([
+        'eslint-plugin-import',
+        '@typescript-eslint/eslint-plugin',
+        '@typescript-eslint/parser',
+        'eslint-config-airbnb-typescript',
+        'eslint-config-prettier',
+        'eslint',
+    ]);
+
     install({
         eslint: '^7',
-        'eslint-plugin-import': '^2.24.2',
-        '@typescript-eslint/eslint-plugin': '^4.30.0',
-        '@typescript-eslint/parser': '^4.30.0',
-        'eslint-config-airbnb-typescript': '^14.0.0',
-        'eslint-config-prettier': '^8.3.0',
         '@bhadurian/eslint-config': '*',
     });
 

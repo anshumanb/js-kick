@@ -34,9 +34,6 @@ const configureEsLint = () => {
     uninstall('eslint-config-airbnb-base');
     install({
         'eslint-config-airbnb': '*',
-        'eslint-plugin-react': '*',
-        'eslint-plugin-react-hooks': '*',
-        'eslint-plugin-jsx-a11y': '*',
         '@next/eslint-plugin-next': '*',
     });
 };
