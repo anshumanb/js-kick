@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "mrm-core": "^6.1.5",
-    "mrm-task-lint-staged": "^6.0.7",
     "sort-package-json": "^1.52.0",
     "user-meta": "^1.0.0"
   },

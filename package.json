@@ -27,10 +27,6 @@
     "prepare": "husky install",
     "release": "multi-semantic-release --deps.bump=inherit"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,md,html,css,scss,json,yaml,yml}": "prettier --write"
-  },
   "devDependencies": {
     "@bhadurian/eslint-config": "file:packages/eslint-config",
     "@bhadurian/prettier-config": "file:packages/prettier-config",
