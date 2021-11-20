@@ -22,6 +22,7 @@
   "scripts": {
     "commit": "cz",
     "format": "prettier --write .",
+    "lint": "eslint --cache .",
     "mrm": "mrm --dir packages/mrm-preset",
     "prepare": "husky install",
     "release": "multi-semantic-release --deps.bump=inherit"
