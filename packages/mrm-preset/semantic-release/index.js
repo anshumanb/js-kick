@@ -1,6 +1,7 @@
+const { mkdirSync } = require('fs');
 const { spawnSync } = require('child_process');
-const { normalize } = require('path');
-const { install, lines, packageJson, uninstall } = require('mrm-core');
+const { normalize, resolve } = require('path');
+const { install, lines, packageJson, uninstall, yaml } = require('mrm-core');
 const { isInstalled, json } = require('../utils');
 
 const setHook = (hook, script) => {
@@ -83,10 +84,20 @@ const configureSemanticRelease = () => {
     });
 };
 
+const configureActions = () => {
+    mkdirSync(resolve('.github/workflows'), { recursive: true });
+
+    yaml(
+        resolve('.github/workflows/release.yml'),
+        yaml(resolve(__dirname, 'release.yml')).get(),
+    ).save();
+};
+
 const task = () => {
     configureCommitlint();
     configureCommitizen();
     configureSemanticRelease();
+    configureActions();
 };
 
 task.description = 'Configure Commitlint';
