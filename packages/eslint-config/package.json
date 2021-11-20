@@ -1,6 +1,6 @@
 {
   "name": "@bhadurian/eslint-config",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Anshuman's ESLint config",
   "homepage": "https://github.com/anshumanb/js-kick/tree/main/packages/eslint-config#readme",
   "bugs": {
