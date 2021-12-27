@@ -9,10 +9,7 @@ const task = () => {
         json('.prettierrc.json').set('@bhadurian/prettier-config').save();
     }
 
-    lines('.prettierignore')
-        .remove(['package-lock.json', 'node_modules'])
-        .add(['node_modules/'])
-        .save();
+    lines('.prettierignore').delete();
 
     packageJson()
         .removeScript('prettier')
