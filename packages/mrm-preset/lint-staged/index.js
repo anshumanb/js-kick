@@ -5,6 +5,10 @@ const { lines, install, json, packageJson } = require('mrm-core');
 const task = () => {
     install({ husky: '>=7', 'lint-staged': '>=11' });
 
+    spawnSync('npx', ['husky', 'install']);
+
+    packageJson().setScript('prepare', 'husky install').save();
+
     const preCommitPath = resolve('.husky/pre-commit');
     const hasLintStaged = lines(preCommitPath)
         .get()
