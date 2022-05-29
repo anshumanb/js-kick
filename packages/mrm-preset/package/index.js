@@ -64,7 +64,7 @@ const task = () => {
             name,
             email,
         },
-        engines: { node: '>=14' },
+        engines: { node: '>=16', npm: '>=8' },
         ...(repo && {
             repository: {
                 type: 'git',
