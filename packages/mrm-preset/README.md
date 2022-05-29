@@ -15,7 +15,7 @@ $ npx mrm <task> --preset=@bhadurian/mrm-preset
 From the root of your project:
 
 ```bash
-$ npm init @bhadurian <project-name> --root
+$ npm init @bhadurian <project-name> -- --root
 ```
 
 This will set up the project to run MRM tasks.
